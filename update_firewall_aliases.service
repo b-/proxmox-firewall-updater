@@ -1,0 +1,12 @@
+[Unit]
+Description=proxmox-firewall-updater
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/local/bin/proxmox-firewall-updater-systemd/update_firewall_aliases.py
+ExecReload=/usr/local/bin/proxmox-firewall-updater-systemd/update_firewall_aliases.py
+
+[Install]
+WantedBy=multi-user.target
